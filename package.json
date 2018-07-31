@@ -20,8 +20,12 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "angular2-notifications": "^1.0.2",
     "core-js": "^2.5.4",
-    "rxjs": "^6.0.0",
+    "ngx-cookie-service": "^1.0.10",
+    "redux-observable": "^1.0.0",
+    "rxjs": "^6.2.2",
+    "rxjs-compat": "^6.2.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
