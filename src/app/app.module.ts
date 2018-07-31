@@ -1,36 +1,48 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AuthGuardService } from './auth.guard.service';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AdminpenalComponent } from './adminpenal/adminpenal.component';
-import { ToysComponent } from './toys/toys.component';
-import { FeshionComponent } from './feshion/feshion.component';
-import { WatchesComponent } from './watches/watches.component';
-import { MensclothsComponent } from './menscloths/menscloths.component';
-import { KidsclothsComponent } from './kidscloths/kidscloths.component';
-import { ElectronicsComponent } from './electronics/electronics.component';
-import { DecorationpieceShowpieceComponent } from './decorationpiece-showpiece/decorationpiece-showpiece.component';
-import { WomensclothsComponent } from './womenscloths/womenscloths.component';
+import { MainComponent } from './main/main.component';
+
+import { SharedService } from './shared.service';
+import { HttpModule } from '@angular/http';
+import { ApiService } from './api.service';
+import { CookieService } from 'ngx-cookie-service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { LoginAdminComponent } from './login-admin/login-admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AdminpenalComponent,
-    ToysComponent,
-    FeshionComponent,
-    WatchesComponent,
-    MensclothsComponent,
-    KidsclothsComponent,
-    ElectronicsComponent,
-    DecorationpieceShowpieceComponent,
-    WomensclothsComponent
+    MainComponent,
+    LoginAdminComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+     HttpModule,
+    FormsModule, 
+    BrowserAnimationsModule,
+    SimpleNotificationsModule.forRoot(),
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: MainComponent
+      },
+      {
+        path: 'main',
+        component: MainComponent
+      },
+      { path: 'adminpenal', component: AdminpenalComponent, canActivate: [AuthGuardService] }
+    ])
   ],
-  providers: [],
+  providers: [SharedService, ApiService, CookieService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
