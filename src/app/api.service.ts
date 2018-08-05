@@ -16,7 +16,9 @@ export class ApiService {
 
 	constructor(private sharedservice: SharedService, private http: Http,public notificationService: NotificationsService) { }
 
-	
+	getCategories(){
+		return this.sharedservice.get("get_categories");
+	}
 
 	notifyUserSuccess(sub, message) {
 		console.log('notifyUserSuccess', sub, message);

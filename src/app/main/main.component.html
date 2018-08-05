@@ -1,6 +1,5 @@
-<app-header (headerClassChange)='updateHeaderToggle()'></app-header>
-
-<div class="container">
+<app-header (headerClassChange)='updateHeaderToggle($event)'></app-header>
+<div class="container" >
   <!-- The Modal -->
   <div class="modal fade" id="myModal">
     <div class="modal-dialog">
@@ -16,17 +15,31 @@
         <div class="modal-body">
         	<div class="container-fluid"></div>
         	<div class="row">
-        		<div class="col-sm-6">
+        		<div class="col-sm-12">
         			<div class="center-block">
         				<img src="assets/images/giftbox.png" width="200px" height="200px">
         			</div>
         		</div>
-        		<div class="col-sm-6">
+        		<div class="col-sm-12">
         			<h4>Details</h4>
         			<p> this gift box are amazing must buy and check this box really its too good you will enjoy with this.</p>
         			<hr>
         			<p> Price: $30.99<p>
+        				<hr>
         				<p>Brand: Antique Gift<p>
+        					<hr>
+        					<div class="col-xs-6">
+        						<label>Quantity:&nbsp;</label><input type="text" class="foam-control">
+        					</div>
+        					<p>Available: 3</p>
+        				<div class="foam-group">
+        					<label>Color:</label>&nbsp;
+        					<select name="Color" class="foam-control">
+        						<option>Red</option>
+        						<option>Yellow</option>
+        						<option>Green</option>
+        					</select>
+        				</div>
         				</div>
         			</div>
         		</div>
@@ -34,30 +47,29 @@
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button class="btn btn-warning"><i class="fa fa-shopping-cart"></i></button>
+          <button class="btn btn-warning">Add to Cart<i class="fa fa-shopping-cart"></i></button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-
-<main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
+<main  *ngIf="viewUser == 'mainPage'" class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
 	<div class="page-header">
-		<h2>Bootstrap 4 Sidebar Menu</h2>
+		<h2>Welcome to Gift Corner</h2>
 	</div>
-	<p class="lead">A responsive, multi-level vertical accordion.</p>
+	<p class="lead">Ab ni lega to kab lega!</p>
 	<hr>
 <div class="row" style="margin-top: 20px;">
 	<div class="card col-md-3" style="width: 18rem;">
-		<img class="card-img-top" src="assets/images/giftbox.png" alt="Card image cap">
+		<img class="card-img-top" src="assets/images/pro4.jpg" alt="Card image cap">
 		<div class="card-body">
 			<h5 class="card-title">Card title</h5>
 			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 		</div>
 		<ul class="list-group list-group-flush">
-			<li class="list price text-danger" style="margin-left: 40px;">List Price: <s>$49.99</s></li>
-			<li class="price" style="margin-left: 40px;">Our Price: $30.99</li>
+			<li class="list price text-danger" style="margin-left: 40px;">List Price: <s>$12.99</s></li>
+			<li class="price" style="margin-left: 40px;">Our Price: $8.99</li>
 			<li class="list-group-item">Vestibulum at eros</li>
 		</ul>
 		<div class="card-body">
@@ -67,14 +79,14 @@
 	</div>
 
 <div class="card col-md-3" style="width: 18rem;">
-		<img class="card-img-top" src="assets/images/giftbox.png" alt="Card image cap">
+		<img class="card-img-top" src="assets/images/pro1.png" alt="Card image cap">
 		<div class="card-body">
 			<h5 class="card-title">Card title</h5>
 			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 		</div>
 		<ul class="list-group list-group-flush">
-			<li class="list price text-danger" style="margin-left: 40px;">List Price: <s>$49.99</s></li>
-			<li class="price" style="margin-left: 40px;">Our Price: $30.99</li>
+			<li class="list price text-danger" style="margin-left: 40px;">List Price: <s>$11.99</s></li>
+			<li class="price" style="margin-left: 40px;">Our Price: $7.99</li>
 			<li class="list-group-item">Vestibulum at eros</li>
 		</ul>
 		<div class="card-body">
@@ -84,14 +96,14 @@
 	</div>
 
 	<div class="card col-md-3" style="width: 18rem;">
-		<img class="card-img-top" src="assets/images/giftbox.png" alt="Card image cap">
+		<img class="card-img-top" src="assets/images/pro2.jpg" alt="Card image cap">
 		<div class="card-body">
 			<h5 class="card-title">Card title</h5>
 			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 		</div>
 		<ul class="list-group list-group-flush">
-			<li class="list price text-danger" style="margin-left: 40px;">List Price: <s>$49.99</s></li>
-			<li class="price" style="margin-left: 40px;">Our Price: $30.99</li>
+			<li class="list price text-danger" style="margin-left: 40px;">List Price: <s>$14.99</s></li>
+			<li class="price" style="margin-left: 40px;">Our Price: $10.99</li>
 			<li class="list-group-item">Vestibulum at eros</li>
 		</ul>
 		<div class="card-body">
@@ -102,14 +114,14 @@
 
 
 	<div class="card col-md-3" style="width: 18rem;">
-		<img class="card-img-top" src="assets/images/giftbox.png" alt="Card image cap">
+		<img class="card-img-top" src="assets/images/pro3.jpg" alt="Card image cap">
 		<div class="card-body">
 			<h5 class="card-title">Card title</h5>
 			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 		</div>
 		<ul class="list-group list-group-flush">
-			<li class="list price text-danger" style="margin-left: 40px;">List Price: <s>$49.99</s></li>
-			<li class="price" style="margin-left: 40px;">Our Price: $30.99</li>
+			<li class="list price text-danger" style="margin-left: 40px;">List Price: <s>$9.99</s></li>
+			<li class="price" style="margin-left: 40px;">Our Price: $6.99</li>
 			<li class="list-group-item">Vestibulum at eros</li>
 		</ul>
 		<div class="card-body">
@@ -117,11 +129,13 @@
 			<a href="#" class="card-link" data-toggle="modal" data-target="#myModal" style="float: right;" >Order</a>
 		</div>
 	</div>
-
-	
-	
 </div>
-
 </main>
 
 
+<main *ngIf="viewUser == 'Mens'"><h1>Mens</h1></main>
+<main *ngIf="viewUser == 'Women'"><h1>Womens</h1></main>
+<main *ngIf="viewUser == 'Baba'"><h1>Baba</h1></main>
+<main *ngIf="viewUser == 'Baby'"><h1>Baby</h1></main>
+<main *ngIf="viewUser == 'Boys'"><h1>Boys</h1></main>
+<main *ngIf="viewUser == 'Girls'"><h1>Girls</h1></main>
