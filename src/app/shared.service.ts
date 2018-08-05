@@ -9,7 +9,7 @@ import 'rxjs/add/operator/catch';
 	providedIn: 'root'
 })
 export class SharedService {
-	urlBase = 'http://localhost/maksof-team-server/';
+	urlBase = 'http://localhost/ecom-api-server/';
 	auth: string;
 
 	constructor(private http: Http) { }
